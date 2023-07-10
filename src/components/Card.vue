@@ -1,8 +1,8 @@
 <template>
-    <div v-if="projects" id="display" class="mt-4 container-fluid mx-auto">
-        <div v-for="projects in projects" :key="projects.id" :projects="projects">
+    <div v-if="products" id="display" class="mt-4 container-fluid mx-auto">
+        <div v-for="products in produts" :key="products.id" :products="products">
             <div class="card">
-                <img :src="products.img" alt="" :id="products.id" class="card-img">
+                <img :src="products.img" :alt="products.title" class="card-img">
                 <div class="card-title">{{products.title}}</div>
                 <div class="card-text">
                     <p>{{products.price}}</p><br>
@@ -16,12 +16,12 @@
 <script>
 export default {
     computed: {
-        projects() {
-            return this.$store.state.projects
+        products() {
+            return this.$store.state.products
         }
     },
     mounted() {
-        this.$store.dispatch("fetchProjects");
+        this.$store.dispatch("fetchProducts");
     },
 }
 </script>
