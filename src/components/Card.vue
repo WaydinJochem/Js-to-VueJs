@@ -1,6 +1,6 @@
 <template>
     <div v-if="products" id="display" class="mt-4 container-fluid mx-auto">
-        <div v-for="products in produts" :key="products.id" :products="products">
+        <div v-for="products in products" :key="products.id" :products="products">
             <div class="card">
                 <img :src="products.img" :alt="products.title" class="card-img">
                 <div class="card-title">{{products.title}}</div>
